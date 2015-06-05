@@ -1,0 +1,31 @@
+body{
+	/*background-color: #C0C0C0;*/
+	background-image: url("/SisBanca/img/imagem1.png");
+}
+
+#titulo{
+	font-family: "Arial";
+	background-color:#0099CC;
+    color:white;
+    text-align:center;
+    padding:5px;
+    border-top-style: outset;
+    border-right-style: groove;
+    border-bottom-style: groove;
+    border-left-style: outset;
+
+}
+
+p{ font-family: "Arial"; font-style: italic;}
+
+#wrap{ width: 90%; margin: auto;}
+
+#botaocadastrar{ margin-left: 38%;}
+
+#buttonCadFun{ margin-left: 20%;}
+
+article {
+    padding-bottom: 60px; 
+    width: 900px; 
+    margin: 0 auto;
+}
