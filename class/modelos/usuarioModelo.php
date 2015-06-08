@@ -30,9 +30,9 @@ class usuarioModelo
 	{
 		$this->id = $id;
 	}
-	public function setnomeComplemento($nomeCompleto)
+	public function setnomeCompleto($nomeCompleto)
 	{
-		$this->setnomeComplemento = $setnomeComplemento;
+		$this->setnomeCompleto = $setnomeCompleto;
 	}
 	public function setCPF($CPF)
 	{
@@ -46,8 +46,22 @@ class usuarioModelo
 	{
 		$this->setsexo = $setsexo;
 	}
-
-
+	public function setestadoCivil($estadoCivil)
+	{
+		$this->estadoCivil = $estadoCivil;
+	}
+	public function setlogradouro($logradouro)
+	{
+		$this->logradouro = $logradouro;
+	}
+	public function setnumero()
+	{
+		$this->numero = $numero;
+	}
+	public function setcomplemento()
+	{
+		$this->complemento = $complemento;
+	}
 
 
 	//Metodos GET

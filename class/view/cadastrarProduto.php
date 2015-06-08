@@ -2,15 +2,15 @@
 <html>
 <head>
 	<title>SisBanca - Cadatrar Produto</title>
-	<link rel="stylesheet" type="text/css" href="/PHP/SisBanca/css/estilo.css"/>
+	<link rel="stylesheet" type="text/css" href="/SisBanca/css/estilo.css"/>
 </head>
 	<meta charset="utf-8"/>
 	<body>
 		<div id="wrap">
-	<h1 id="titulo">Cadastrar Produto - SisBAnca</h1>
+	<h1 id="titulo">Cadastrar Produto - SisBanca</h1>
 	<p>Esta pagina tem um só objetivo, que é realizar o cadastro de todos os produtos da empresa.</p>
 
-	<form action="/php/SisBanca/class/controlles/produtoController.php" method="POST">
+	<form action="/SisBanca/class/controlles/produtoController.php" method="POST">
 		<fieldset style="width:50%">
 		<legend>Formulário de Cadastrar Produto</legend>
 		Nome do Produto:<br><input type="text" name="nomeproduto" size=40 maxlenght=40>

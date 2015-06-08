@@ -1,3 +1,4 @@
+<DOCTYPE html>
 <html>
 	<head>
 		<title>Cadastro de Usuário - SisBanca</title>
