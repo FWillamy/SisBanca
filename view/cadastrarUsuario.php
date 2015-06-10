@@ -2,30 +2,30 @@
 <html>
 	<head>
 		<title>Cadastro de Usuário - SisBanca</title>
-		<link rel="stylesheet" type="text/css" href="/PHP/SisBanca/css/estilo.css"/>
+		<link rel="stylesheet" type="text/css" href="/SisBanca/css/estilo.css"/>
 	</head>
 		<meta charset="utf-8" />	
 	<body>
 	<div id="wrap">		
 		<h1 id="titulo">Cadastro Funcionario - SisBanca</h1>
-		<form>
+		<form action="Index.php?class=usuario&acao=salvar" method="POST">
 			<fieldset style="width:50%">
 			<legend>Dados Pessoais</legend>
-			Nome Completo:
-			<input type="text" name="nomeCompleto">
+			Nome Completo:	
+			<input type="text" name="nome">
 			<br>
 			CPF:
-			<input type="text" name="CPF">
+			<input type="text" name="cpf">
 			<br>
 			RG:
-			<input type="text" name="RG">
+			<input type="text" name="rg">
 			<br>
 			Data de Nascimento:
 			<input type="date" name="datadeNascimento">
 			<br>
 			Sexo:
-			<input type="radio" name="Sexo" value="Masculino" checked>Masculino
-			<input type="radio" name="Sexo" value="Feminino">Feminino
+			<input type="radio" name="sexo" value="Masculino" checked>Masculino
+			<input type="radio" name="sexo" value="Feminino">Feminino
 			<br>
 			Estado Civíl:
 			<input type="radio" name="estadoCivil" value="Solteiro(a)" checked>Solteiro(a)
@@ -45,7 +45,7 @@
 				<input type="text" name="complemento">
 				<br>
 				CEP:<br>
-				<input type="text" name="CEP">
+				<input type="text" name="cep">
 				<br>
 				Bairro:<br>
 				<input type="text" name="bairro">
@@ -54,7 +54,7 @@
 				<input type="text" name="cidade">
 				<br>
 				Estado:<br>
-				<select name="UF">
+				<select name="estado">
 					<option value="AC">AC</option>
 					<option value="AL">AL</option>
 					<option value="AP">AP</option>
@@ -83,9 +83,6 @@
 					<option value="TO">TO</option>
 			</fieldset>	
 			<fieldset style="width:50%">
-				<legend>Infomações sobre o cargo</legend>
-				Cargo:<br>
-				<input type="text" name="cargo">
 				<br>
 				Turno:<br>
 				<input type="Radio" name="turno" value="Matutino" checked>Matutino
@@ -97,10 +94,11 @@
 				<input type="Radio" name="turno" value="Diurno">Diurno
 				<br>
 				Horário de Trabalho - Entrada:
-				<input type="time" name="hrEntrada">
+				<input type="time" name="horarioEntrada">
 				Saida:
-				<input type="time" name="hrSaida">
+				<input type="time" name="horarioSaida">
 			</fieldset>
+			<br><input type="submit" value="Cadastrar Usuário" name="Cadastrar" id="botaocadastrar">
 		</form>	
 	</div>
 	</body>

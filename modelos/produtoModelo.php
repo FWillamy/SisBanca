@@ -2,7 +2,6 @@
 /**
 * Modelo que interagem com a classe produtoCroller.php
 */
-require_once 'class/controlles/produtoController.php';
 
 class produtoModelo
 {
@@ -23,7 +22,7 @@ class produtoModelo
 	}
 	public function setnomeProduto($nomeProduto)
 	{
-		$this->nome = $nome;
+		$this->nomeProduto = $nomeProduto;
 	}
 	public function setdescricaodoProduto($descricaodoProduto)
 	{
@@ -61,7 +60,7 @@ class produtoModelo
 	}	
 	public function getnomeProduto()
 	{
-		return $this->nome;
+		return $this->nomeProduto;
 	}	
 	public function getdescricaodoProduto()
 	{
@@ -94,17 +93,18 @@ class produtoModelo
 
 
 	//Lógica necessário para salvar os dados no banco MySql
-	public function salvar($produto)
+	public function salvar($produtoModelo)
 	{	//Função de interação com /controlles/produtoController.php
 		global $con;
 
-		$sql = "INSERT INTO produto (nomeProduto, descricaodoProduto, nomeFabricante, dataFabricacao, dataVencimento, numerodoLote, categoriaProduto, comentario)"
-			."VALUES ('".$produto->getnomeProduto()."','".$produto->getdescricaodoProduto()
-				."','".$produto->getnomeFabricante()."','".$produto->dataFabricacao()."','".$produto->dataVencimento()
-				."','".$produto->numerodoLote()."','".$produto->categoriaProduto()."','".$produto->comentario()."'')";
-		if ($con->query($sql) === TRUE) 
+		$sql = "INSERT INTO produto(nomeProduto, descricaodoProduto, nomeFabricante, dataFabricacao, dataVencimento, numerodoLote, categoriaProduto, comentario)"
+			."VALUES ('".$produtoModelo->getnomeProduto()."','".$produtoModelo->getdescricaodoProduto()
+				."','".$produtoModelo->getnomeFabricante()."','".$produtoModelo->getdataFabricacao()."','".$produtoModelo->getdataVencimento()
+				."','".$produtoModelo->getnumerodoLote()."','".$produtoModelo->getcategoriaProduto()."','".$produtoModelo->getcomentario()."');";
+				
+		if($con->query($sql) === TRUE)
 			{
-            	echo "Produto salvo com sucesso!";
+            	echo "<br>Produto salvo com sucesso!";
         	} 
         	else 
         	{
@@ -138,7 +138,7 @@ class produtoModelo
 			if ($result->num_rows > 0) 
 			{
 				# condição caso o resultado da função listar tennha mais de uma linha/coluna
-				while ( $obj = $result->fetch_object("produto")) 
+				while ($obj = $result->fetch_object("produtoModelo")) 
 				{
 					# caso o resultado seja verdadeiro faça a linha de comanda abaixo
 					$arrayListar[] = $obj;
@@ -173,12 +173,28 @@ class produtoModelo
         return $produto; 
     }
 
-    /*public function editar($id)
-    {
-    	global $con;
+   public function editar($produtoModelo)
+   {
+        global $con;
 
-    	$sql = "UPDATE produto SET nomeProduto = '{$produto->getnomeProduto()}',". "descricaodoProduto = "
-    }*/
+        $sql = "UPDATE produto SET  nomeProduto =  '{$produtoModelo->getnomeProduto()}' ," 
+            ."descricaodoProduto =  '{$produtoModelo->getdescricaodoProduto()}' , " 
+            ."nomeFabricante =  '{$produtoModelo->getnomeFabricante()}' , " 
+            ."dataFabricacao =  '{$produtoModelo->getdataFabricacao()}' , " 
+            ."dataVencimento =  '{$produtoModelo->getdataVencimento()}' , "  
+            ."numerodoLote =  '{$produtoModelo->getnumerodoLote()}' , "
+            ."categoriaProduto = '{$produtoModelo->getcategoriaProduto()}', "
+            ."comentario = '{$produtoModelo->getcomentario()}' WHERE id = '{$produtoModelo->getId()}' "; 
 
-}
+        if ($con->query($sql) === TRUE) 
+        	{
+            	echo "Edit record created successfully";
+        	} 
+        else 
+        	{
+            	echo "Error: " . $sql . "<br>" . $conn->error;
+        	} 
+    }
+    
+ }
 ?>

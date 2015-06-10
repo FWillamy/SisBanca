@@ -10,7 +10,7 @@
 	<h1 id="titulo">Cadastrar Produto - SisBanca</h1>
 	<p>Esta pagina tem um só objetivo, que é realizar o cadastro de todos os produtos da empresa.</p>
 
-	<form action="/SisBanca/class/controlles/produtoController.php" method="POST">
+	<form action="Index.php?class=produto&acao=salvar" method="POST">
 		<fieldset style="width:50%">
 		<legend>Formulário de Cadastrar Produto</legend>
 		Nome do Produto:<br><input type="text" name="nomeproduto" size=40 maxlenght=40>
@@ -27,10 +27,10 @@
 		<br>
 		Tipo da Categoria do Produto:
 		<select name="categoriaproduto">
-			<option value="categoria1">Categoria1</option>
-			<option value="categoria2">Categoria2</option>
-			<option value="categoria3">Categoria3</option>
-			<option value="categoria4">Categoria4</option>
+			<option value="revista">Revista</option>
+			<option value="cigarro">Cigarro</option>
+			<option value="jornal">Jornal</option>
+			<option value="dvd">DVD</option>
 		</select>
 		<br><br>
 		Comentário<br><textarea name="comentario" rows=6 cols=40></textarea>
