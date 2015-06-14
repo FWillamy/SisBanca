@@ -120,20 +120,20 @@ class usuarioModelo
 		global $con;
 
 		$sql = "INSERT INTO usuario(nome, rg, cpf, , datadeNascimento, sexo, estadoCivil, logradouro, numero, bairro, cidade, estado, turno, horarioEntrada, horarioSaida)"
-			."VALUES ('".$usuario->getnome()."','".$usuario->getrg()
-				."','".$usuario->getcpf()."','".$usuario->getdatadeNascimento()."','".$usuario->getsexo()
-				."','".$usuario->getestadoCivil()."','".$usuario->getlogradouro()."','".$usuario->getnumero()
-				."','".$usuario->getbairro()."','".$usuario->getcidade()."','".$usuario->getestado()
-				."','".$usuario->getturno()."','".$usuario->gethorarioEntrada()
-				."','".$usuario->gethorarioSaida()."');";
-			echo $sql;
+			."VALUES ('".$usuarioModelo->getnome()."','".$usuarioModelo->getrg()
+				."','".$usuarioModelo->getcpf()."','".$usuarioModelo->getdatadeNascimento()."','".$usuarioModelo->getsexo()
+				."','".$usuarioModelo->getestadoCivil()."','".$usuarioModelo->getlogradouro()."','".$usuarioModelo->getnumero()
+				."','".$usuarioModelo->getbairro()."','".$usuarioModelo->getcidade()."','".$usuarioModelo->getestado()
+				."','".$usuarioModelo->getturno()."','".$usuarioModelo->gethorarioEntrada()
+				."','".$usuarioModelo->gethorarioSaida()."');";
+			
 		if($con->query($sql) === TRUE)
 			{
-            	echo "Usuário salvo com sucesso!";
+            	echo "<br>Usuário salvo com sucesso!";
         	} 
         	else 
         	{
-            	echo "Error: " . $sql . "<br>" . $con->error;
+            	echo "<br>Error: " . $sql . "<br>" . $con->error;
         	}
 	}
 

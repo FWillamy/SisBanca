@@ -31,8 +31,8 @@
 					<td><?php echo $produto->getnumerodoLote();  ?> </td>
 					<td><?php echo $produto->getcategoriaProduto();  ?> </td>
 					<td><?php echo $produto->getcomentario();  ?> </td>
-					<?php echo "<td valign='top'><a href=Index.php?"; 
-					?>
+					<?php echo "<td valign='top'><a href=Index.php?class=produto&acao=excluir&valor={$produto->getId()}>excluir</a></td>"
+								."<td valign='top'><a href=Index.php?class=produto&acao=editar&valor={$produto->getId()} >Editar</a>";?>
 
 				</tr>
 			<?php endforeach; ?>

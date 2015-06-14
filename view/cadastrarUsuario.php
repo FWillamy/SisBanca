@@ -12,23 +12,23 @@
 			<fieldset style="width:50%">
 			<legend>Dados Pessoais</legend>
 			Nome Completo:	
-			<input type="text" name="nome">
+			<br><input type="text" name="nome">
 			<br>
 			CPF:
-			<input type="text" name="cpf">
+			<br><input type="text" name="cpf">
 			<br>
 			RG:
-			<input type="text" name="rg">
+			<br><input type="text" name="rg">
 			<br>
 			Data de Nascimento:
-			<input type="date" name="datadeNascimento">
+			<br><input type="date" name="datadeNascimento">
 			<br>
 			Sexo:
-			<input type="radio" name="sexo" value="Masculino" checked>Masculino
+			<br><input type="radio" name="sexo" value="Masculino" checked>Masculino
 			<input type="radio" name="sexo" value="Feminino">Feminino
 			<br>
 			Estado Civíl:
-			<input type="radio" name="estadoCivil" value="Solteiro(a)" checked>Solteiro(a)
+			<br><input type="radio" name="estadoCivil" value="Solteiro(a)" checked>Solteiro(a)
 			<input type="radio" name="estadoCivil" value="Casado(a)" checked>Casado(a)
 			<input type="radio" name="estadoCivil" value="Viuvo(a)" checked>Viuvo(a)
 			<input type="radio" name="estadoCivil" value="Divorciado(a)">Divorciado(a)
@@ -40,12 +40,10 @@
 				<br>
 				Numero:<br>
 				<input type="text" name="numero">
-				<br>
-				Complemento:<br>
-				<input type="text" name="complemento">
-				<br>
-				CEP:<br>
-				<input type="text" name="cep">
+				<!--Complemento:<br>
+				<input type="text" name="complemento">-->
+				<!--CEP:<br>
+				<input type="text" name="cep">-->
 				<br>
 				Bairro:<br>
 				<input type="text" name="bairro">
@@ -81,10 +79,8 @@
 					<option value="SP">SP</option>
 					<option value="SE">SE</option>
 					<option value="TO">TO</option>
-			</fieldset>	
-			<fieldset style="width:50%">
-				<br>
-				Turno:<br>
+				</select>
+				<br>Turno:<br>
 				<input type="Radio" name="turno" value="Matutino" checked>Matutino
 				<br>
 				<input type="Radio" name="turno" value="Vespertino" checked>Vespertino

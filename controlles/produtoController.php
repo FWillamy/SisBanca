@@ -58,7 +58,7 @@
 
 		public function excluir()
 		{
-			$this->produtoModelo->excluir($_GET["id"]);
+			$this->produtoModelo->excluir($_GET["valor"]);
 			$this->listar();
 		}
 	

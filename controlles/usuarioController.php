@@ -38,7 +38,7 @@
 		$sv->setturno($_POST["turno"]);
 		$sv->sethorarioEntrada($_POST["horarioEntrada"]);
 		$sv->sethorarioSaida($_POST["horarioSaida"]);
-
+		$this->usuarioModelo->salvar($sv);
 		}
 
 		public function listar()
