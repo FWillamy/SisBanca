@@ -1,58 +1,59 @@
+<?php $usuarioModelo = $_REQUEST['usuarioModelo']; ?>
 <!DOCTYPE html>
     <html>
         <head>
-            <title>Cadastro de Usuário - SisBanca</title>
+            <title>SisBanca - Editar Usuario</title>
             <link rel="stylesheet" type="text/css" href="/SisBanca_beta/css/estilo.css"/>
-        </head>
-        <meta charset="utf-8" />	
-        <body>
-            <div id="wrap">		
-                <h1 id="titulo">Cadastro Funcionario - SisBanca</h1>
-                <form action="index.php?class=usuario&acao=salvar" method="POST">
-                    <fieldset style="width:50%">
+    </head>
+    <meta charset="utf-8"/>
+    <body>
+        <div id="wrap">
+            <h1 id="titulo">Editar Usuario - SisBanca</h1>          
+            <form action="Index.php?class=usuario&acao=editar&valor=<?= $usuarioModelo->getId() ?>" method="POST">
+                <fieldset style="width:50%">
                         <legend>Dados Pessoais</legend>
                         Nome Completo:	
-                        <br><input type="text" name="nome">
+                        <br><input type="text" name="nome" value='<?= $usuarioModelo->getnome() ?>'>
                         <br>
                         CPF:
-                        <br><input type="text" name="cpf">
+                        <br><input type="text" name="cpf" value='<?= $usuarioModelo->getcpf() ?>'>
                         <br>
                         RG:
-                        <br><input type="text" name="rg">
+                        <br><input type="text" name="rg" value='<?= $usuarioModelo->getrg() ?>'>
                         <br>
                         Data de Nascimento:
-                        <br><input type="date" name="datadeNascimento">
+                        <br><input type="date" name="datadeNascimento" value='<?= $usuarioModelo->getdatadeNascimento() ?>'>
                         <br>
                         Sexo:
-                        <br><input type="radio" name="sexo" value="Masculino" checked>Masculino
-                        <input type="radio" name="sexo" value="Feminino">Feminino
+                        <br><input type="radio" name="sexo" value='<?= $usuarioModelo->getsexo() ?>'>Masculino
+                        <input type="radio" name="sexo" value='<?= $usuarioModelo->getsexo() ?>'>Feminino
                         <br>
                         Estado Civíl:
-                        <br><input type="radio" name="estadoCivil" value="Solteiro(a)" checked>Solteiro(a)
-                        <input type="radio" name="estadoCivil" value="Casado(a)" checked>Casado(a)
-                        <input type="radio" name="estadoCivil" value="Viuvo(a)" checked>Viuvo(a)
-                        <input type="radio" name="estadoCivil" value="Divorciado(a)">Divorciado(a)
+                        <br><input type="radio" name="estadoCivil" value='<?= $usuarioModelo->getestadoCivil() ?>' >Solteiro(a)
+                        <input type="radio" name="estadoCivil" value='<?= $usuarioModelo->getestadoCivil() ?>' >Casado(a)
+                        <input type="radio" name="estadoCivil" value='<?= $usuarioModelo->getestadoCivil() ?>' >Viuvo(a)
+                        <input type="radio" name="estadoCivil" value='<?= $usuarioModelo->getestadoCivil() ?>' >Divorciado(a)
                     </fieldset>
                     <fieldset style="width:50%">
                         <legend>Endereço</legend>
                         Logradouro:<br>
-                        <input type="text" name="logradouro">
+                        <input type="text" name="logradouro" value='<?= $usuarioModelo->getlogradouro() ?>'>
                         <br>
                         Numero:<br>
-                        <input type="text" name="numero">
+                        <input type="text" name="numero" value='<?= $usuarioModelo->getnumero() ?>'>
                         <!--Complemento:<br>
                         <input type="text" name="complemento">-->
                         <!--CEP:<br>
                         <input type="text" name="cep">-->
                         <br>
                         Bairro:<br>
-                        <input type="text" name="bairro">
+                        <input type="text" name="bairro" value='<?= $usuarioModelo->getbairro() ?>'>
                         <br>
                         Cidade:<br>
-                        <input type="text" name="cidade">
+                        <input type="text" name="cidade" value='<?= $usuarioModelo->getcidade() ?>'>
                         <br>
                         Estado:<br>
-                        <select name="estado">
+                        <select name="estado" value='<?= $usuarioModelo->getestado() ?>'>
                             <option value="AC">AC</option>
                             <option value="AL">AL</option>
                             <option value="AP">AP</option>
@@ -81,21 +82,22 @@
                             <option value="TO">TO</option>
                         </select>
                         <br>Turno:<br>
-                        <input type="Radio" name="turno" value="Matutino" checked>Matutino
+                        <input type="Radio" name="turno" value='<?= $usuarioModelo->getturno() ?>' checked>Matutino
                         <br>
-                        <input type="Radio" name="turno" value="Vespertino" checked>Vespertino
+                        <input type="Radio" name="turno" value='<?= $usuarioModelo->getturno() ?>' >Vespertino
                         <br>
-                        <input type="Radio" name="turno" value="Noturno" checked>Noturno
+                        <input type="Radio" name="turno" value='<?= $usuarioModelo->getturno() ?>' >Noturno
                         <br>
-                        <input type="Radio" name="turno" value="Diurno">Diurno
+                        <input type="Radio" name="turno" value='<?= $usuarioModelo->getturno() ?>' >Diurno
                         <br>
                         Horário de Trabalho - Entrada:
-                        <input type="time" name="horarioEntrada">
+                        <input type="time" name="horarioEntrada" value='<?= $usuarioModelo->gethorarioEntrada() ?>'>
                         Saida:
-                        <input type="time" name="horarioSaida">
+                        <input type="time" name="horarioSaida" value='<?= $usuarioModelo->gethorarioSaida() ?>'>
                     </fieldset>
-                    <br><input type="submit" value="Cadastrar Usuário" name="Cadastrar" id="botaocadastrar" class="btn">
-                    <a href="javascript:history.back()" class="btn" header('location: view/index.php');>Cancelar</a>
+                <br><input type="submit" value="Cadastrar Usuário" name="Cadastrar" id="botaocadastrar"class="btn">
+                <a href=Index.php><input type="submit" value="Cancelar" name="HomePage" class="btn"></a><br>
                 </form>	
             </div>
         </body>
+ </html>

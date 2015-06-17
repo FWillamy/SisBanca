@@ -1,31 +1,42 @@
-<?php	$usuario = $_REQUEST['usuario']; ?>
+<?php $usuarioModelo = $_REQUEST['usuarioModelo']; ?>
 <!DOCTYPE>
 <html>
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>Listagem dos Usuário</title>
-	</head>
-	<body>
-		<h1>Listagem dos Usuário</h1>
-		<table>
-			<tr>
-				<th>ID</th>
-				<th>Nome do Produto</th>
-				<th>Descriçao do Produto</th>
-				<th>Nome do Fabricante</th>
-			</tr>
-			<?php foreach ($produtoModelo as $produto): ?>
-				<tr>
-					<td><?php echo $produto->getId();  ?> </td>
-					<td><?php echo $produto->getnomeProduto();  ?> </td>
-					<td><?php echo $produto->getdescricaodoProduto();  ?> </td>
-					<?php echo "<td valign='top'><a href=index.php?"
-								."class=Cliente&acao=delete"
-								."&valor={$cliente->getId()}>Delete</a></td>"
-								."<td><a href=index.php?class=Cliente&acao=selecionar"
-								."&valor={$cliente->getId()}>Edit</a></td> "; ?>
-				</tr>
-			<?php endforeach; ?>
-		</table>
-	</body>
+    <head>
+        <title>SisBanca - Listar Usuários</title>
+        <link rel="stylesheet" type="text/css" href="/SisBanca_beta/css/estilo.css"/>
+    </head>
+    <body>
+        <h1 id="titulo">Listagem de Usuários</h1>
+         <a href="javascript:history.back()" class="btn" header('location: view/index.php');>Menu</a><br><br>
+        <br><table>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Sexo</th>
+                <th>Endereço</th>
+                <th>Bairro</th>
+                <th>Turno</th>
+                <th>Horário inicio</th>
+                <th>Horário final</th>
+                
+            </tr>
+            <?php foreach ($usuarioModelo as $usuarioModelo): ?>
+                
+                    <td><?php echo $usuarioModelo->getId(); ?> </td>
+                    <td><?php echo $usuarioModelo->getnome(); ?> </td>
+                    <td><?php echo $usuarioModelo->getsexo(); ?> </td>
+                    <td><?php echo $usuarioModelo->getlogradouro(); ?> </td>
+                    <td><?php echo $usuarioModelo->getbairro(); ?> </td>
+                    <td><?php echo $usuarioModelo->getturno(); ?> </td>
+                    <td><?php echo $usuarioModelo->gethorarioEntrada(); ?> </td>
+                    <td><?php echo $usuarioModelo->gethorarioSaida(); ?> </td>
+                    
+                    <?php
+                    echo "<td valign='top'><a href=Index.php?class=usuario&acao=excluir&valor={$usuarioModelo->getId()}>Excluir</a></td>"
+                    . "<td valign='top'><a href=Index.php?class=usuario&acao=selecionar&valor={$usuarioModelo->getId()}>Editar</a>";
+                    ?>
+                </tr>
+            <?php endforeach; ?>
+        </table>
+    </body>
 </html>

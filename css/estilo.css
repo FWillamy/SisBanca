@@ -1,18 +1,19 @@
 body{
-	/*background-color: #C0C0C0;*/
-	background-image: url("/SisBanca/img/imagem1.png");
+    /*background-color: #C0C0C0;*/
+    background-image: url("/SisBanca_beta/img/imagem1.png");
 }
 
 #titulo{
-	font-family: "Arial";
-	background-color:#0099CC;
+    font-family: "Arial";
+    background-color:#0099CC;
     color:white;
     text-align:center;
     padding:5px;
-    border-top-style: outset;
+    /*border-top-style: outset;
     border-right-style: groove;
     border-bottom-style: groove;
-    border-left-style: outset;
+    border-left-style: outset;*/
+    border-radius: 10px/20px;
 
 }
 
@@ -28,4 +29,48 @@ article {
     padding-bottom: 60px; 
     width: 900px; 
     margin: 0 auto;
+}
+
+.btn {
+    background: #3498db;
+    background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+    background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+    background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+    background-image: -o-linear-gradient(top, #3498db, #2980b9);
+    background-image: linear-gradient(to bottom, #3498db, #2980b9);
+    -webkit-border-radius: 28;
+    -moz-border-radius: 28;
+    border-radius: 28px;
+    font-family: Arial;
+    color: #ffffff;
+    font-size: 16px;
+    padding: 5px 10px 5px 10px;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background: #3cb0fd;
+    background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+    text-decoration: none;
+}
+
+.form-horizontal{
+    width: 500px;
+    height: 100px;
+
+}
+
+.checkbox{
+    border: 1px solid #FF9900;
+    background-color: #C0C0C0;
+}
+.control-label{
+
+}
+.control-group{
+
 }
