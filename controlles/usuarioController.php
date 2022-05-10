@@ -52,7 +52,7 @@ class usuarioController {
     }
 
      public function editar() {
-        # Esta função tem em realizar o cadastro do funcionário.
+        # Esta função tem em realizar a edição do cadastro do funcionário.
 
         $sv = new usuarioModelo();
 

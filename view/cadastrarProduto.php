@@ -31,6 +31,8 @@
                             <option value="cigarro">Cigarro</option>
                             <option value="jornal">Jornal</option>
                             <option value="dvd">DVD</option>
+                            <option value="cd">CD</option>
+                            <option value="outros">Outros</option>
                         </select>
                         <br><br>
                         Comentário<br><textarea name="comentario" rows=6 cols=40></textarea>
